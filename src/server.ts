@@ -41,7 +41,7 @@ async function onServerUpSuccess() {
 
 function serveStaticHtml(app:any){
   const resourcePath = path.join(__dirname, 'ui');
-  if(existsSync(resourcePath)) app.use(urls.web, express.static(path.join(__dirname, 'ui')));
+  if(existsSync(resourcePath)) app.use(urls.web, express.static(resourcePath));
   
   // TODO come up with a better fallback
   var html = "<!DOCTYPE html>\n<html>\n    <head>\n    </head>\n <body>\n      <h1>Site Down</h1>\n   </body>\n</html>"
