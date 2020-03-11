@@ -39,14 +39,6 @@ async function onServerUpSuccess() {
 }
 
 
-
-
-
-// app.listen( port, () => {
-//     console.log( `server started at http://localhost:${ port }` );
-// } );
-
-
 function serveStaticHtml(app:any){
   const resourcePath = path.join(__dirname, 'ui');
   if(existsSync(resourcePath)) app.use(urls.web, express.static(path.join(__dirname, 'ui')));
