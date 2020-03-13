@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts",
-    "start:prod": "list-contents && node ./dist/server.js",
+    "start:prod": "yarn list-contents && node ./dist/server.js",
     "build:prod": "tsc && yarn copy-schemas",
     "copy-schemas": "$(npm bin)/cpx src/**/*.graphql dist",
     "list-contents": "ls -la && ls -la ./dist"
