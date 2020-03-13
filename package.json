@@ -6,9 +6,10 @@
   "scripts": {
     "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts",
-    "start:prod": "node ./dist/server.js",
+    "start:prod": "list-contents && node ./dist/server.js",
     "build:prod": "tsc && yarn copy-schemas",
-    "copy-schemas": "$(npm bin)/cpx src/**/*.graphql dist"
+    "copy-schemas": "$(npm bin)/cpx src/**/*.graphql dist",
+    "list-contents": "ls -la && ls -la ./dist"
   },
   "devDependencies": {
     "@types/compression": "^1.7.0",
