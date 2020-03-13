@@ -7,7 +7,8 @@
     "start:dev": "yarn run build:dev",
     "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts",
     "start:prod": "node ./dist/server.js",
-    "build:prod": "tsc && cp -r ./ui ./dist/"
+    "build:prod": "tsc && yarn copy-schemas",
+    "copy-schemas": "$(npm bin)/cpx src/**/*.graphql dist"
   },
   "devDependencies": {
     "@types/compression": "^1.7.0",
@@ -15,6 +16,7 @@
     "@types/graphql": "^14.5.0",
     "@types/graphql-depth-limit": "^1.1.2",
     "@types/node": "^13.9.0",
+    "cpx": "^1.5.0",
     "graphql-depth-limit": "^1.1.0",
     "graphql-import": "^1.0.0-beta.2",
     "graphql-import-node": "^0.0.4",
